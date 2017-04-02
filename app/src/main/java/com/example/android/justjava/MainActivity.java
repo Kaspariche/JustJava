@@ -5,6 +5,7 @@ import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.android.justjava.R;
@@ -27,9 +28,15 @@ public class MainActivity extends AppCompatActivity {
      */
     int quantity = 0;
 
+    boolean withWhippedCream = false;
+
+
+
 
     public void submitOrders(View view) {
-        String priceMessage= quantity*5+"$ for "+quantity+" cups";
+        withWhippedCream = ((CheckBox) findViewById(id.with_whipped_cream)).isChecked();
+        String whippedCreamYesOrNo= withWhippedCream? "Whipped cream is added":"Whipped cream is not added";
+        String priceMessage= quantity*5+"$ for "+quantity+" cups"+ "\n"+whippedCreamYesOrNo;
         displayPrice(priceMessage);
     }
     public void increment(View view) {
