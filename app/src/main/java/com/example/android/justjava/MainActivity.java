@@ -52,6 +52,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void confirmMail(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:47.6,-122.3"));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+
+
+
     public void increment(View view) {
         quantity = quantity + 1;
         display(quantity);
