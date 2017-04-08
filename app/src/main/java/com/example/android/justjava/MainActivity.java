@@ -52,17 +52,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void confirmMail(View view) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setType(HTTP.PLAIN_TEXT_TYPE);
-        intent.putExtra("sms_body", message);
-        intent.putExtra(Intent.EXTRA_STREAM, attachment);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-
-
-
-
     public void increment(View view) {
         quantity = quantity + 1;
         display(quantity);
