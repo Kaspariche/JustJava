@@ -27,6 +27,14 @@ import static java.net.Proxy.Type.HTTP;
  */
 public class MainActivity extends AppCompatActivity {
 
+    public static final String COFFEE_ORDER_FOR = "Coffee order for ";
+    public static final String KEYNOVAHOLDING_GMAIL_COM = "keynovaholding@gmail.com";
+    public static final String MAILTO = "mailto:";
+    public static final String CUPS = " cups";
+    public static final String $_FOR = "$ for ";
+    public static final String NAME = "Name: ";
+    public static final String WHIPPED_CREAM_IS_NOT_ADDED = "Whipped cream is not added";
+    public static final String WHIPPED_CREAM_IS_ADDED = "Whipped cream is added";
     /**
      * This method is called when the order button is clicked.
      */
@@ -46,15 +54,19 @@ public class MainActivity extends AppCompatActivity {
         name = nameField.getText().toString();
 
         withWhippedCream = ((CheckBox) findViewById(id.with_whipped_cream)).isChecked();
-        String whippedCreamYesOrNo= withWhippedCream? "Whipped cream is added":"Whipped cream is not added";
-        priceMessage = "Name: " + name + "\n" + quantity * 5 + "$ for " + quantity + " cups" + "\n" + whippedCreamYesOrNo;
+        String whippedCreamYesOrNo = withWhippedCream ? WHIPPED_CREAM_IS_ADDED : WHIPPED_CREAM_IS_NOT_ADDED;
+        priceMessage = NAME + name + "\n" + quantity * 5 + $_FOR + quantity + CUPS + "\n" + whippedCreamYesOrNo;
         displayPrice(priceMessage);
     }
 
 
     public void confirmMail(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("geo:47.6,-122.3"));
+        submitOrders(view);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse(MAILTO)); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{KEYNOVAHOLDING_GMAIL_COM});
+        intent.putExtra(Intent.EXTRA_SUBJECT, COFFEE_ORDER_FOR + name);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
