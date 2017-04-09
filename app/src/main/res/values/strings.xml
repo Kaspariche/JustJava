@@ -4,9 +4,9 @@
     <string name="name">Name</string>
     <string name="topping">Topping</string>
     <string name="whipped_cream">Whipped cream</string>
-    <string name="increment">-</string>
+    <string name="decrement">-</string>
     <string name="startvalue">0</string>
-    <string name="decrement">+</string>
+    <string name="increment">+</string>
     <string name="order">Order</string>
     <string name="display_below">Display Below</string>
 
