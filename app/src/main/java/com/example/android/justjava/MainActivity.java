@@ -5,22 +5,13 @@ import android.content.Intent;
 import android.icu.text.NumberFormat;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.android.justjava.R;
-
-import java.util.List;
-
-import static android.R.id.message;
-import static android.content.Intent.*;
-import static android.content.Intent.ACTION_SENDTO;
 import static com.example.android.justjava.R.*;
-import static java.net.Proxy.Type.HTTP;
 
 /**
  * This app displays an order form to order coffee.
@@ -46,18 +37,20 @@ public class MainActivity extends AppCompatActivity {
         name = nameField.getText().toString();
 
         withWhippedCream = ((CheckBox) findViewById(id.with_whipped_cream)).isChecked();
-        String whippedCreamYesOrNo= withWhippedCream? "Whipped cream is added":"Whipped cream is not added";
-        priceMessage = "Name: " + name + "\n" + quantity * 5 + "$ for " + quantity + " cups" + "\n" + whippedCreamYesOrNo;
+        String whippedCreamYesOrNo = withWhippedCream ? getString(R.string.whipped_cream_is_added) : getString(string.whipped_cream_is_not_added);
+
+
+        priceMessage = getString(string.order_summary_name, name) +
+                "\n" + getString(string.order_summary_quantity_unit, NumberFormat.getCurrencyInstance().format(quantity * 5))
+                + "\n" + whippedCreamYesOrNo;
         displayPrice(priceMessage);
     }
-
-
     public void confirmMail(View view) {
         submitOrders(view);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"keynovaholding@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "coffee order for " + name);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.mail_subject) + name);
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
