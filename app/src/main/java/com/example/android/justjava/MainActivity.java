@@ -53,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void confirmMail(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("geo:47.6,-122.3"));
+        submitOrders(view);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"keynovaholding@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "coffee order for " + name);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
