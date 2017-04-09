@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Just Java</string>
-    <string name="quantity">Quantity!</string>
+    <string name="quantity">Quantity</string>
+    <string name="name">Name</string>
+    <string name="topping">Topping</string>
+    <string name="whipped_cream">Whipped cream</string>
+    <string name="increment">-</string>
+    <string name="startvalue">0</string>
+    <string name="decrement">+</string>
+    <string name="order">Order</string>
+    <string name="display_below">Display Below</string>
+
+
 </resources>
