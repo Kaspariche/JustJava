@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         priceMessage = getString(string.order_summary_name, name) +
-                "\n" + getString(string.order_summary_quantity_unit, NumberFormat.getCurrencyInstance().format(quantity * 5))
+                "\n" + getString(string.order_summary_quantity_unit, NumberFormat.getCurrencyInstance().format(quantity * 5), quantity)
                 + "\n" + whippedCreamYesOrNo;
         displayPrice(priceMessage);
     }

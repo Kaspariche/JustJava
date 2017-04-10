@@ -11,9 +11,9 @@
     <string name="display_below">Display Below</string>
     <string name="whipped_cream_is_added">Whipped cream is added</string>
     <string name="whipped_cream_is_not_added">Whipped cream is not added</string>
-    <string name="mail_subject">coffee order for</string>
-    <string name="order_summary_name">Name:<xliff:g example="amy" id="name">%s</xliff:g></string>
-    <string name="order_summary_quantity_unit">for <xliff:g example="5" id="number">%s</xliff:g> cups</string>
+    <string name="mail_subject">Coffee order for </string>
+    <string name="order_summary_name">Name: <xliff:g example="amy" id="name">%s</xliff:g></string>
+    <string name="order_summary_quantity_unit"><xliff:g example="5" id="total price">%s</xliff:g> for <xliff:g example="5" id="number">%s</xliff:g> cups.</string>
 
 
 </resources>
