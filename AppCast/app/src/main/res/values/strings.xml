@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TaskCast</string>
+    <string name="calls">Calls</string>
+    <string name="likes">Likes</string>
+    <string name="bids">Bids</string>
+    <string name="negotations">Negotations</string>
+    <string name="promises">Promises</string>
+    <string name="accomplishments">Accomplishments</string>
+    <string name="rewards">"Rewards"</string>
+</resources>

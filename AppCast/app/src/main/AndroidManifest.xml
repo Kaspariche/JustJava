@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.TaskCast">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CallsActivity"
+            android:label="@string/calls"></activity>
+        <activity
+            android:name=".LikesActivity"
+            android:label="@string/likes"></activity>
+        <activity
+            android:name=".BidsActivity"
+            android:label="@string/bids"></activity>
+        <activity
+            android:name=".NegotationsActivity"
+            android:label="@string/negotations"></activity>
+        <activity
+            android:name=".PromisesActivity"
+            android:label="@string/promises"></activity>
+        <activity
+            android:name=".AccomplishmentsActivity"
+            android:label="@string/accomplishments"></activity>
+        <activity
+            android:name=".RewardsActivity"
+            android:label="@string/rewards"></activity>
+    </application>
+
+</manifest>

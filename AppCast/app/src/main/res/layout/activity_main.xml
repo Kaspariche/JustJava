@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="com.example.android.TaskCast.MainActivity">
+
+    <TextView
+        android:id="@+id/calls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calls" />
+
+    <TextView
+        android:id="@+id/likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/likes" />
+
+    <TextView
+        android:id="@+id/bids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bids" />
+
+    <TextView
+        android:id="@+id/negotations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/negotations" />
+
+    <TextView
+        android:id="@+id/promises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/promises" />
+
+    <TextView
+        android:id="@+id/accomplishments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accomplishments" />
+
+    <TextView
+        android:id="@+id/rewards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rewards" />
+
+
+</LinearLayout>
+
